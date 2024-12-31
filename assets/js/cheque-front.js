@@ -119,12 +119,15 @@ $(document).ready(function () {
                         output = output.slice(1)
                         var arr = [];
                         $(output).each(function (index, value) {
-                            arr[index] = getChequeHTML(
-                                value[1],
-                                dateHtml(moment(new Date((value[0] - (value[0] > 59 ? 1 : 0)) * 86400000 + Date.UTC(1899, 11, 30))).format('DD-MM-YYYY')),
-                                getAmount(value[2]),
-                                getAmountWord(value[2])
-                            );
+                            if(value.length > 0)
+                            {
+                                arr[index] = getChequeHTML(
+                                    value[1],
+                                    dateHtml(moment(new Date((value[0] - (value[0] > 59 ? 1 : 0)) * 86400000 + Date.UTC(1899, 11, 30))).format('DD-MM-YYYY')),
+                                    getAmount(value[2]),
+                                    getAmountWord(value[2])
+                                );
+                            }
                         });
                         getCheque(arr)
                         $('#formFile')[0].value = '';

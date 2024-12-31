@@ -1,16 +1,40 @@
 @media print {
-    .mt-5, .mt-3, .my-3 {
+
+    .mt-5,
+    .mt-3,
+    .my-3 {
         margin-top: 0 !important;
         margin-bottom: 0 !important;
     }
 
+    .cheque-title,
+    .cheque-title+div,
+    .navbar {
+        display: none;
+    }
+
+    .print-container {
+        margin: 0 auto;
+        position: relative;
+    }
+
     .cheque-container {
-        background-color: lightgray;
         page-break-before: always;
         margin: 0;
         padding: 0;
-        /* margin-left: auto; */
+        position: fixed;
+        top: 50%; /* Center vertically */
+        right: 0; /* Align to the right */
+        transform: translateY(-50%); /* Adjust for vertical centering */
+        background-color: lightgray;
     }
+    
+    .print-page {
+        page-break-before: always;
+        position: relative; /* Required for absolute positioning of child elements */
+        width: 100%; /* Ensure full width for the page */
+        height: 100vh; /* Ensure full height for each page */
+      }
 
     .print-container .border {
         border: none !important;
