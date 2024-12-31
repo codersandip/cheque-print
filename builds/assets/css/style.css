@@ -1,0 +1,36 @@
+.cheque-container {
+    width: 202mm;
+    height: 92mm;
+    /* background-color: aqua; */
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border: 0px solid black;
+}
+
+.print-page {
+    margin-bottom: 20px;
+}
+
+.cheque-container.back {
+    padding: 20px 50px;
+}
+
+.cheque-container>div {
+    position: absolute;
+}
+
+.cheque-date div.col {
+    text-align: center;
+}
+
+.cheque-ac-payee {
+    top: 7mm;
+    left: -9mm;
+    transform: rotate(-45deg);
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    font-size: 12px;
+}
+
+

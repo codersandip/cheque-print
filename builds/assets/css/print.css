@@ -1,0 +1,18 @@
+@media print {
+    .mt-5, .mt-3, .my-3 {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .cheque-container {
+        background-color: lightgray;
+        page-break-before: always;
+        margin: 0;
+        padding: 0;
+        /* margin-left: auto; */
+    }
+
+    .print-container .border {
+        border: none !important;
+    }
+}

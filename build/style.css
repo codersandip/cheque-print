@@ -1,0 +1,72 @@
+.cheque-container {
+    width: 202mm;
+    height: 92mm;
+    /* background-color: aqua; */
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border: 0px solid black;
+}
+
+.cheque-container.back {
+    padding: 20px 50px;
+}
+
+.cheque-container>div {
+    position: absolute;
+}
+
+.cheque-date div.col {
+    text-align: center;
+}
+
+.cheque-ac-payee {
+    top: 7mm;
+    left: -9mm;
+    transform: rotate(-45deg);
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    font-size: 12px;
+}
+
+@media print {
+    @page {
+        size: A4 /* landscape */;
+        margin: 0;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .mt-5, .mt-3 {
+        margin-top: 0 !important;
+    }
+
+    .cheque-title,
+    .cheque-form {
+        display: none;
+    }
+
+    .cheque-container {
+        /* width: 202mm;
+        height: 92mm; */
+        background-color: transparent;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0 !important;
+        /* position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);  */
+        /* margin: 0 auto; */
+        /* padding: 0; */
+        /* position: absolute; */
+        /* right: 0%; */
+        /* top: 50%; */
+        /* transform: translateY(50%); */
+    }
+}
