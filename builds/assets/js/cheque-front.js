@@ -34,7 +34,7 @@ $(document).ready(function () {
 
     chequePrint();
     // $('.front-print-btn').trigger('click');
-
+    $('chequeToggle').trigger('change');
     $('.cheque-form input, .cheque-form select').on('input change', function (e) {
         if ($("#chequeFormBank").val() != "") {
             var data = ChequeData[$("#chequeFormBank").val()];
@@ -42,6 +42,18 @@ $(document).ready(function () {
             var data = ChequeData[$("#chequeFormBank")[0][1].value];
         }
         switch (this.id) {
+            case "chequeToggle":
+                if (e.type == "change") {
+                    if (this.checked) {
+                        $(this).parent().find('label').text('Single Cheque Print');
+                        $('.single-cheque').toggleClass('d-none');
+                        $('.multiple-cheque').toggleClass('d-none');
+                    } else {
+                        $(this).parent().find('label').text('Multiple Cheque Print');
+                        $('.single-cheque').toggleClass('d-none');
+                        $('.multiple-cheque').toggleClass('d-none');
+                    }
+                }
             case "chequeFormType":
                 if ($("#chequeFormType").val() == "Bearer") {
                     $(".cheque-ac-payee").css("opacity", "0");

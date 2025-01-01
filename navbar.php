@@ -16,20 +16,10 @@
         <li class="nav-item">
           <a class="nav-link" href="./cheque-back.php">Cheque Back</a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link">Disabled</a>
-        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" href="./envelope-print.php">Envelope Print</a>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
-
-<?php
-
-// function activeUrl($url) {
-  // activeUrl('cheque-prefix.php');
-//  activeUrl('cheque-back.php'); 
-  // print_r(str_contains($_SERVER['REQUEST_URI'], $url));
-//  return str_contains($_SERVER['REQUEST_URI'], $url) ? 'active' : '';
-// }
-?>
