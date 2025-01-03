@@ -11,7 +11,7 @@
 <body>
     <?php include_once('./navbar.php'); ?>
     <div class="container mt-3">
-        <div class="text-center mb-5 cheque-title">
+        <div class="text-center mb-3 cheque-title">
             <h1>Envelope Printing</h1>
             <!-- <p>Software to print cheque</p> -->
         </div>
@@ -81,7 +81,7 @@
             $('#width, #height, #envelopeTitle, #envelopeSenderAddress, #envelopeDeliveryAddress, #noOfPages').on('input', function() {
                 envelopePrint();
             });
-
+            envelopePrint();
         });
 
         function envelopePrint() {
@@ -91,10 +91,10 @@
                 cheque_html += `<div class="print-page mt-3">
                     <div class="cheque-container border back py-3" data-width="${$('#width').val()}mm" data-height="${$('#height').val()}mm" style="width: ${$('#width').val()}mm; height: ${$('#height').val()}mm;">
                     <h3 class="text-center"> ${$('#envelopeTitle').val()}</h3>
-                    <div style="position: absolute; bottom: 10%; left: 10%; width: 40%;" draggable="true">
+                    <div style="position: absolute; bottom: 10%; left: 10%; min-width: 20%; max-width: 40%;" draggable="true">
                     ${converter.makeHtml(`####From, \n`+ $('#envelopeSenderAddress').val().replace(/\n/g, '<br>'))}
                     </div>
-                    <div style="position: absolute; top: 30%; right: 10%; width: 40%;" draggable="true">
+                    <div style="position: absolute; top: 30%; right: 10%; min-width: 20%; max-width: 40%;" draggable="true">
                     ${converter.makeHtml('####To, \n' + $('#envelopeDeliveryAddress').val().replace(/\n/g, '<br>'))}
                     </div>
                     </div>

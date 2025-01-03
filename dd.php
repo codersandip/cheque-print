@@ -37,14 +37,21 @@ if ( !is_dir( $dir ) ) {
     mkdir( $dir );
 }
 
+function replaceString($output) {
+    $output = str_replace(".php", ".html", $output);
+    $output = str_replace("        ", "", $output);
+    $output = str_replace("    ", "", $output);
+    return $output;
+}
+
 exec('php index.php', $output);
-file_put_contents($dir . '/index.html', str_replace('.php', '.html', $output));
+file_put_contents($dir . '/index.html',  replaceString( $output));
 exec('php cheque-back.php', $output1);
-file_put_contents($dir . '/cheque-back.html', str_replace('.php', '.html', $output1));
+file_put_contents($dir . '/cheque-back.html',  replaceString( $output1));
 exec('php cheque-prefix.php', $output2);
-file_put_contents($dir . '/cheque-prefix.html', str_replace('.php', '.html', $output2));
+file_put_contents($dir . '/cheque-prefix.html',  replaceString( $output2));
 exec('php envelope-print.php', $output3);
-file_put_contents($dir . '/envelope-print.html', str_replace('.php', '.html', $output3));
+file_put_contents($dir . '/envelope-print.html',  replaceString( $output3));
 custom_copy('./assets', './builds/assets');
 
 // copy('./index.html', $dir . '/index.html');

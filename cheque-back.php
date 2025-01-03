@@ -11,7 +11,7 @@
 <body>
     <?php include_once('./navbar.php'); ?>
     <div class="container mt-3">
-        <div class="text-center mb-5 cheque-title">
+        <div class="text-center mb-3 cheque-title">
             <h1>Cheque Printing Software</h1>
             <!-- <p>Software to print cheque</p> -->
         </div>

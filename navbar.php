@@ -19,6 +19,9 @@
         <li class="nav-item">
           <a class="nav-link" href="./envelope-print.php">Envelope Print</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./emi-cheque-print.php">EMI Cheque Print</a>
+        </li>
       </ul>
     </div>
   </div>

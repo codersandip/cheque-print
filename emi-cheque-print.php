@@ -4,24 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cheque Printing Software</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="style.css">
+    <title>Cheque Printing Software - Home</title>
+    <?php include_once('./css.php'); ?>
 </head>
 
 <body>
-    <div class="container mt-3">
+    <?php include_once('./navbar.php'); ?>
+    <div class="container mt-3 mb-5">
         <div class="text-center mb-3 cheque-title">
-            <h1>Cheque Printing Software</h1>
-            <!-- <p>Software to print cheque</p> -->
+            <h1>EMI Cheque Printing</h1>
         </div>
         <div>
             <form name="chequeForm" class="cheque-form" autocomplete="off">
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="form-group">
+                        <div class="form-group mb-3">
                             <label for="chequeFormLanguage">Select Language</label>
                             <select class="form-control form-control-sm" id="chequeFormLanguage">
                                 <option value="en-IN">English</option>
@@ -31,7 +28,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="form-group">
+                        <div class="form-group mb-3">
                             <label for="chequeFormType">Cheque Type</label>
                             <select class="form-control form-control-sm" id="chequeFormType">
                                 <option value="Bearer">Bearer</option>
@@ -42,7 +39,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="form-group">
+                        <div class="form-group mb-3">
                             <label for="chequeFormBank">Select Bank</label>
                             <select class="form-control form-control-sm" id="chequeFormBank">
                                 <option value="">Select Bank</option>
@@ -55,7 +52,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="form-group">
+                        <div class="form-group mb-3">
                             <label for="chequeFormDate">Date</label>
                             <input type="text" class="form-control form-control-sm" id="chequeFormDate"
                                 placeholder="Date">
@@ -84,83 +81,46 @@
                                 pattern="^\d+(?:\.\d+)?$" placeholder="Amount">
                         </div>
                     </div>
+                    <div class="col-md-4">
+                        <div class="form-group mb-3">
+                            <label for="chequeFormAmount">Intrest: </label>
+                            <input type="text" class="form-control form-control-sm" id="chequeFormAmount"
+                                pattern="^\d+(?:\.\d+)?$" placeholder="Amount">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group mb-3">
+                            <label for="chequeFormAmount">Amount: </label>
+                            <input type="text" class="form-control form-control-sm" id="chequeFormAmount"
+                                pattern="^\d+(?:\.\d+)?$" placeholder="Amount">
+                        </div>
+                    </div>
                     <div class="col-md-12">
                         <div class="form-group mb-3 text-center">
                             <button class="btn btn-primary w-25 front-print-btn">Print</button>
                         </div>
                     </div>
-                    <!-- <div class="col-md-4">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group mb-3">
-                                    <label for="chequeFormAmountWord">Amount in Words: </label>
-                                    <input type="text" class="form-control form-control-sm" id="chequeFormAmountWord"
-                                        placeholder="Amount in Words">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group mb-3">
-                                    <label for="chequeFormAmountWord">Amount in Words: </label>
-                                    <input type="text" class="form-control form-control-sm" id="chequeFormAmountWord"
-                                        placeholder="Amount in Words">
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </form>
         </div>
-        <div class="cheque-container front mt-3 text-uppercase">
-            <div class="cheque-ac-payee">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A/C Payee
-                Only&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-            <div class="cheque-name"></div>
-            <div class="cheque-date">
-                <div class="row m-0">
-                    <!--       <div class="col p-0" style="width: 5mm;"></div>
-                    <div class="col p-0" style="width: 5mm;"></div>
-                    <div class="col p-0" style="width: 5mm;"></div>
-                    <div class="col p-0" style="width: 5mm;"></div>
-                    <div class="col p-0" style="width: 5mm;"></div>
-                    <div class="col p-0" style="width: 5mm;"></div>
-                    <div class="col p-0" style="width: 5mm;"></div>
-                     -->
+        <div class="print-container"><!-- d-flex justify-content-center align-items-center -->
+            <div class="print-page mt-3">
+                <div class="cheque-container front text-uppercase border">
+                    <div class="cheque-ac-payee">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A/C Payee
+                        Only&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                    <div class="cheque-name"></div>
+                    <div class="cheque-date">
+                        <div class="row m-0"></div>
+                    </div>
+                    <div class="cheque-amount"></div>
+                    <div class="cheque-amount-word"></div>
                 </div>
             </div>
-            <div class="cheque-amount"></div>
-            <div class="cheque-amount-word"></div>
-        </div>
-        <div>
-            <form>
-                <div class="row mt-3">
-                    <div class="col-md-6 offset-md-3">
-                        <div class="form-group mb-3">
-                            <label for="" class="form-label">Cheque Back Data</label>
-                            <textarea id="chequeFormBackData" class="form-control mb-3" rows="10" id="">Name: Sandip Baliram Tawhare
-Account No.: 550002010013625
-Mobile No.: 9527849688</textarea>
-                        </div>
-                        <div class="form-group mb-3 text-center">
-                            <button class="btn btn-primary w-25 back-print-btn">Print</button>
-                        </div>
-                    </div>
-            </form>
-        </div>
-        <div class="cheque-container back my-3 fs-5">
-
         </div>
     </div>
-    <!-- <button onclick="openPrintView()">Open Print View</button> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="https://unpkg.com/gijgo@1.9.14/js/gijgo.min.js" type="text/javascript"></script>
-    <script src="https://jasonday.github.io/printThis/printThis.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-
-    <!-- <script src="https://unpkg.com/i18next/dist/umd/i18next.js"></script> -->
-    <script src="./to-words.bundle.js"></script>
-    <script src="./moment.bundle.js"></script>
-    <script src="./ChequeData.js"></script>
-    <script src="./script.js"></script>
+    <?php include_once('./js.php'); ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="./assets/js/emi-cheque.js"></script>
 </body>
 
 </html>

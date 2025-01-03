@@ -12,7 +12,7 @@
     <?php include_once('./navbar.php'); ?>
     <div class="container mt-3 mb-5">
         <div>
-            <div class="text-center mb-5 cheque-title">
+            <div class="text-center mb-3 cheque-title">
                 <h1>Cheque Prefix</h1>
             </div>
             <form id="saveChequePrefix">

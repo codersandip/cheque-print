@@ -1,14 +1,5 @@
 const ToWords = require("to-words").ToWords;
 const moment = require("moment");
-// const {
-//     jsPDF
-// } = window.jspdf;
-// const jspdf = new jsPDF({
-//     orientation: "p",
-//     unit: "in",
-//     format: "a4",
-//     floatPrecision: 16
-// });
 
 function getToWordsInstance(locale) {
     return new ToWords({
@@ -55,6 +46,7 @@ $(document).ready(function () {
                     }
                 }
             case "chequeFormType":
+                $('.cheque-cancel').css("opacity", "0");
                 if ($("#chequeFormType").val() == "Bearer") {
                     $(".cheque-ac-payee").css("opacity", "0");
                 } else if ($("#chequeFormType").val() == "Payee") {
@@ -68,6 +60,13 @@ $(document).ready(function () {
                     $(".cheque-ac-payee").css("color", "rgba(0, 0, 0, 0)");
                     $(".cheque-name").text(`${chequePrefix.payeePrefix}Self${chequePrefix.payeeSufix}`);
                     $("#chequeFormName").val("Self");
+                } else if ( $("#chequeFormType").val() == "Cancel") {
+                    $(".cheque-name").text('');
+                    $(".cheque-date").text('');
+                    $(".cheque-amount").text('');
+                    $(".cheque-amount-word").text('');
+                    $(".cheque-ac-payee").css("color", "rgba(0, 0, 0, 0)");
+                    $('.cheque-cancel').css("opacity", "1");
                 }
                 break;
 
@@ -228,6 +227,7 @@ function getChequeHTML(name, date, amount, amountWord) {
     </div>\
     <div class="cheque-amount" style="${data.amount_position}">${ amount }</div>\
     <div class="cheque-amount-word" style="${data.amount_word_position}">${ amountWord }</div>\
+    <div class="cheque-cancel">Cancel</div>
 </div>`;
     return chequeHtml;
 }
@@ -239,6 +239,7 @@ function getCheque(html) {
         chequeHtml += `<div class="print-page mt-3">${value}</div>`;
     });
     $(".print-container").html('<div>' + chequeHtml + '</div>');
+    $('.cheque-cancel').css("opacity", "0");
     if ($("#chequeFormType").val() == "Bearer") {
         $(".cheque-ac-payee").css("opacity", "0");
     } else if ($("#chequeFormType").val() == "Payee") {
@@ -252,6 +253,14 @@ function getCheque(html) {
         $(".cheque-ac-payee").css("color", "rgba(0, 0, 0, 0)");
         $(".cheque-name").text(`${chequePrefix.payeePrefix}Self${chequePrefix.payeeSufix}`);
         $("#chequeFormName").val("Self");
+    } else if ( $("#chequeFormType").val() == "Cancel") {
+        $(".cheque-name").text('');
+        $(".cheque-date").text('');
+        $(".cheque-amount").text('');
+        $(".cheque-amount-word").text('');
+        $(".cheque-ac-payee").css("opacity", "0");
+        $('.cheque-cancel').css("opacity", "1");
+        
     }
 }
 

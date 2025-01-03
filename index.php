@@ -11,7 +11,7 @@
 <body>
     <?php include_once('./navbar.php'); ?>
     <div class="container mt-3 mb-5">
-        <div class="text-center mb-5 cheque-title">
+        <div class="text-center mb-3 cheque-title">
             <h1>Cheque Printing Software</h1>
         </div>
         <div>
@@ -25,7 +25,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <div class="form-group mb-3">
                             <label for="chequeFormLanguage">Select Language</label>
                             <select class="form-control form-control-sm" id="chequeFormLanguage">
@@ -35,18 +35,20 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <div class="form-group mb-3">
                             <label for="chequeFormType">Cheque Type</label>
                             <select class="form-control form-control-sm" id="chequeFormType">
                                 <option value="Bearer">Bearer</option>
+                                <option value="Order">Order</option>
                                 <option value="Payee">Payee</option>
                                 <option value="Crossed">Crossed</option>
                                 <option value="Self">Self</option>
+                                <option value="Cancel">Cancel</option>
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <div class="form-group mb-3">
                             <label for="chequeFormBank">Select Bank</label>
                             <select class="form-control form-control-sm" id="chequeFormBank">
@@ -59,14 +61,14 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4 single-cheque">
+                    <div class="col-md-2 single-cheque">
                         <div class="form-group mb-3">
                             <label for="chequeFormDate">Date</label>
                             <input type="text" class="form-control form-control-sm" id="chequeFormDate"
                                 placeholder="Date">
                         </div>
                     </div>
-                    <div class="col-md-4 single-cheque">
+                    <div class="col-md-2 single-cheque">
                         <div class="form-group mb-3">
                             <label for="chequeFormName">Name: </label>
                             <input type="text" class="form-control form-control-sm" id="chequeFormName" list="names"
@@ -82,33 +84,33 @@
                             </datalist>
                         </div>
                     </div>
-                    <div class="col-md-4 single-cheque">
+                    <div class="col-md-2 single-cheque">
                         <div class="form-group mb-3">
                             <label for="chequeFormAmount">Amount: </label>
                             <input type="text" class="form-control form-control-sm" id="chequeFormAmount"
                                 pattern="^\d+(?:\.\d+)?$" placeholder="Amount">
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <div class="form-group mb-3">
                             <label for="noOfPages">No of Pages: </label>
                             <input type="text" class="form-control form-control-sm" id="noOfPages" placeholder="No of Pages">
                         </div>
                     </div>
-                    <div class="col-md-4 multiple-cheque d-none">
+                    <div class="col-md-2 multiple-cheque d-none">
                         <div class="form-group mb-3">
                             <label for="formFile" class="form-label">Default file input example</label>
                             <input class="form-control" type="file" id="formFile" accept=".xlsx">
                         </div>
                     </div>
-                    <div class="col-md-4 d-flex align-items-center multiple-cheque d-none">
+                    <div class="col-md-2 d-flex align-items-center multiple-cheque d-none">
                         <div class="form-group mb-3">
                             <a href="./assets/sample.xlsx">Sample Template</a>
                         </div>
                     </div>
-                    <div class="col-md-12">
-                        <div class="form-group mb-3 text-center">
-                            <button class="btn btn-primary w-25 front-print-btn">Print</button>
+                    <div class="col-md-2">
+                        <div class="form-group mb-3">
+                            <button class="btn btn-primary front-print-btn">Print</button>
                         </div>
                     </div>
                 </div>
