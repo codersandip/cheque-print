@@ -1,3 +1,4 @@
 php dd.php
-ga. Changes
+git add .
+git commit -m "Changea"
 git push origin main
