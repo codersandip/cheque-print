@@ -18,6 +18,7 @@ $(document).ready(function () {
                         size: ${$('.cheque-container').data('width') + ' ' + $('.cheque-container').data('height')} ;
                         margin: 0;
                     }
+                    .cheque-container { ${chequePrefix.chequeAlign} }
                 }
             `;
         document.head.appendChild(style);

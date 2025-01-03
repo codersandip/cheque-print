@@ -26,7 +26,6 @@
         top: 50%; /* Center vertically */
         right: 0; /* Align to the right */
         transform: translateY(-50%); /* Adjust for vertical centering */
-        background-color: lightgray;
     }
     
     .print-page {

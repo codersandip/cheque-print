@@ -80,6 +80,23 @@
                             </div>
                         </fieldset>
                     </div>
+                    <div class="col-md-8 offset-md-2">
+                        <fieldset class="rounded p-4 shadow mb-4">
+                            <legend class="float-none w-auto px-2 text-primary">Cheque Align</legend>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group mb-3">
+                                        <label for="amountWordsPrefix">Align: </label>
+                                        <select id="chequeAlign" class="form-select">
+                                            <option value="top: 50%;right: 0;transform: translateY(-50%);">Center</option>
+                                            <option value="top: 0%;right: 0;transform: translateY(-0%);">Left</option>
+                                            <option value="top: 100%;right: 0;transform: translateY(-100%);">Right</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
                     <div class="col-md-8 offset-md-2 text-center">
                         <Button class="btn btn-primary w-25 shadow">Save</Button>
                     </div>
@@ -92,7 +109,7 @@
         $(document).ready(function() {
             $("#saveChequePrefix").submit(function(e) {
                 e.preventDefault();
-                $(this).find('input').each(function(index, value) {
+                $(this).find('input, select').each(function(index, value) {
                     chequePrefix[$(value).attr('id')] = $(value).val();
                 });
                 localStorage.setItem("chequePrefix", JSON.stringify(chequePrefix));
