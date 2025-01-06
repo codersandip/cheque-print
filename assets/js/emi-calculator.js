@@ -1,5 +1,3 @@
-const ToWords = require("to-words").ToWords;
-const moment = require("moment");
 
 function getToWordsInstance(locale) {
     return new ToWords({

@@ -37,7 +37,7 @@
         word-spacing: 1px;
       }
 
-    .print-container .border {
+    .print-container .border, .cheque-container.border {
         border: none !important;
     }
 
