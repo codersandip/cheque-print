@@ -11,7 +11,7 @@
           <a class="nav-link" aria-current="page" href="./">Cheque Print</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./cheque-prefix.php">Cheque Prefix</a>
+          <a class="nav-link" href="./cheque-style.php">Cheque Styling</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./cheque-back.php">Cheque Back</a>
@@ -21,6 +21,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./emi-cheque-print.php">EMI Cheque Print</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="./emi-calculator.php">EMI Calculator</a>
         </li>
       </ul>
     </div>

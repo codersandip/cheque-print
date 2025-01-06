@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cheque Printing Software - Prefix</title>
-    <?php include_once('./css.php'); ?>
+    <?php include_once('./layout/css.php'); ?>
 </head>
 
 <body>
-    <?php include_once('./navbar.php'); ?>
+    <?php include_once('./layout/navbar.php'); ?>
     <div class="container mt-3 mb-5">
         <div>
             <div class="text-center mb-3 cheque-title">
-                <h1>Cheque Prefix</h1>
+                <h1>Cheque Styling</h1>
             </div>
             <form id="saveChequePrefix">
                 <div class="row">
@@ -104,7 +104,7 @@
             </form>
         </div>
     </div>
-    <?php include_once('./js.php'); ?>
+    <?php include_once('./layout/js.php'); ?>
     <script>
         $(document).ready(function() {
             $("#saveChequePrefix").submit(function(e) {

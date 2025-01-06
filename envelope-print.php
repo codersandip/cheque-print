@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cheque Printing Software - Envelope Print</title>
-    <?php include_once('./css.php'); ?>
+    <?php include_once('./layout/css.php'); ?>
 </head>
 
 <body>
-    <?php include_once('./navbar.php'); ?>
+    <?php include_once('./layout/navbar.php'); ?>
     <div class="container mt-3">
         <div class="text-center mb-3 cheque-title">
             <h1>Envelope Printing</h1>
@@ -74,7 +74,7 @@
         <div class="print-container">
         </div>
     </div>
-    <?php include_once('./js.php'); ?>
+    <?php include_once('./layout/js.php'); ?>
     <script src="https://unpkg.com/showdown@2.1.0/dist/showdown.min.js"></script>
     <script>
         $(document).ready(function() {

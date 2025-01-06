@@ -16,7 +16,6 @@
         </div>
         <div class="row justify-content-center">
             <form name="emiForm" class="emi-form col-md-8" autocomplete="off">
-
                 <div class="row mb-3">
                     <label for="loanAmount" class="col-md-4 col-form-label">Loan Amount</label>
                     <div class="col-md-8">
@@ -85,7 +84,7 @@
         </div>
     </div>
     <?php include_once('./layout/js.php'); ?>
-    <script src="./assets/js/emi-cheque.js"></script>
+    <script src="./assets/js/emi-calculator.js"></script>
 </body>
 
 </html>

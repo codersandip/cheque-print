@@ -1,16 +1,14 @@
-const style = document.createElement('style');
-style.id = 'dynamicPrintStyle';
 $(document).ready(function () {
+    const style = document.createElement('style');
+    style.id = 'dynamicPrintStyle';
     var url = window.location.pathname.substring(1).split('.')[0];
     $('.nav-item a').each(function (index, value) {
-        if (value.href.includes(url) && url != '') {
-            $(value).addClass('active').addClass('fw-bold').addClass('text-primary');
-        } else if ($(value).attr('href') == './' && url == '') {
+        if ((value.href.includes(url) && url != '') || ($(value).attr('href') == './' && url == '')) {
             $(value).addClass('active').addClass('fw-bold').addClass('text-primary');
         }
     });
 
-    $('.back-print-btn, .front-print-btn').on('click', function (e) {
+    $(document).on('click', '.back-print-btn, .front-print-btn, .single-cheque-print', function (e) {
         e.preventDefault();
         style.textContent = `
                 @media print {
@@ -22,7 +20,7 @@ $(document).ready(function () {
                 }
             `;
         document.head.appendChild(style);
-        printout('.print-container');
+        $(e.currentTarget).hasClass('single-cheque-print') ? printout($(e.currentTarget).parent().parent()[0]) : printout('.print-container');
         document.getElementById('dynamicPrintStyle').remove();
     });
 });

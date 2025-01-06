@@ -1,13 +1,15 @@
 const ToWords = require("to-words").ToWords;
 const moment = require("moment");
+// console.log(require("jspdf"));
+// 
 const { jsPDF } = window.jspdf;
-
 const jspdf = new jsPDF({
     orientation: "p",
     unit: "in",
     format: "a4",
     floatPrecision: 16 
 });
+// console.log('doc', doc);
 
 
 function getToWordsInstance(locale) {
@@ -204,6 +206,7 @@ const tempTitle = document.title;
 window.addEventListener('beforeprint', () => {
     var date = new Date();
     document.title = date.getTime();
+    // $('.cheque-container').append($('.cheque-container').html());
 });
 window.addEventListener('afterprint', () => {
     document.title = tempTitle;
