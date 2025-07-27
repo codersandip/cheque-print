@@ -1,13 +1,12 @@
 // webpack.config.js
 const path = require('path');
 const  webpack  = require('webpack');
-// console.log(/* path, */__dirname);
 
 module.exports = {
-    entry: './index.js', // Entry file
+    entry: './index.js',
     output: {
-        filename: 'main.js', // Output bundle
-        path: path.resolve(__dirname, 'assets/js'), // Output directory
+        filename: 'main.js',
+        path: path.resolve(__dirname, 'assets/js'),
     },
     mode: 'production', // Set to 'development' or 'production'
     plugins: [

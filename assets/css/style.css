@@ -47,7 +47,15 @@
     border-bottom: 2px solid black;
     font-size: 12px;
 }
-
+.cheque-negotiate {
+    top: 5%;
+    left: 55%;
+    transform: translate(-55%, -5%);
+    text-align: center;
+    border-top: 2px solid black !important;
+    border-bottom: 2px solid black !important;
+    padding: 0 10px;
+}
 .cheque-cancel {
     position: absolute;
     top: 50%;

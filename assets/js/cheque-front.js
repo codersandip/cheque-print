@@ -1,6 +1,8 @@
 // const ToWords = require("to-words").ToWords;
 // const moment = require("moment");
 
+// const moment = require("moment");
+
 function getToWordsInstance(locale) {
     return new ToWords({
         localeCode: locale,
@@ -38,16 +40,21 @@ $(document).ready(function () {
                     var chequeAcPayee = $(".cheque-ac-payee");
                     var chequeFormType = $("#chequeFormType").val();
                     $('.cheque-cancel').css("display", "none");
+                    $('.cheque-negotiate').addClass('d-none');
+                    $(".cheque-name, .cheque-date, .cheque-amount, .cheque-amount-word").removeClass('d-none');
                     chequeAcPayee.css("opacity", "0").css("color", "rgba(0, 0, 0, 0)");
                     if (chequeFormType == "Order") {
                     } else if (chequeFormType == "Payee") {
                         chequeAcPayee.css("opacity", "1").css("color", "rgba(0, 0, 0, 1)");
                     } else if (chequeFormType == "Crossed") {
                         chequeAcPayee.css("opacity", "1");
+                    } else if (chequeFormType == "Payee Not Nigotiable") {
+                        chequeAcPayee.css("opacity", "1").css("color", "rgba(0, 0, 0, 1)");
+                        $('.cheque-negotiate').removeClass('d-none');
                     } else if (chequeFormType == "Self") {
                         $(".cheque-name").text(`${chequePrefix.payeePrefix}Self${chequePrefix.payeeSufix}`);
                     } else if (chequeFormType == "Cancel") {
-                        $(".cheque-name, .cheque-date, .cheque-amount, .cheque-amount-word").text('');
+                        $(".cheque-name, .cheque-date, .cheque-amount, .cheque-amount-word").addClass('d-none');
                         $('.cheque-cancel').css("display", "block");
                     }
                     break;
@@ -107,9 +114,10 @@ $(document).ready(function () {
                             var arr = [];
                             $(output).each(function (index, value) {
                                 if (value.length > 0) {
+                                    var date = XLSX.SSF.parse_date_code(value[0]);
                                     arr[index] = getChequeHTML(
                                         value[1],
-                                        dateHtml(moment(new Date((value[0] - (value[0] > 59 ? 1 : 0)) * 86400000 + Date.UTC(1899, 11, 30))).format('DD-MM-YYYY')),
+                                        dateHtml(moment(date.m + '-' + date.d + '-' + date.y).format('DD-MM-YYYY')),
                                         getAmount(value[2]),
                                         getAmountWord(value[2])
                                     );
@@ -210,6 +218,7 @@ function getChequeHTML(name, date, amount, amountWord) {
     <div class="cheque-date" style="${data.date_position}">\
         <div class="row m-0">${date}</div>\
     </div>\
+    <div class="cheque-negotiate position-absolute d-none">Not Negotiable</div>\
     <div class="cheque-amount" style="${data.amount_position}">${ amount }</div>\
     <div class="cheque-amount-word" style="${data.amount_word_position}">${ amountWord }</div>\
     <div class="cheque-cancel">Cancel</div>
